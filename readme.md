@@ -64,3 +64,13 @@ make clean
 make
 ```
 とすると，ouitable.h がそのディレクトリに作成される．そのファイルをsrc/にコピー(上書き)してリビルドする．
+
+
+## 使用しているカスタムフォント
+
+https://fonts.google.com/noto/specimen/Noto+Sans+Mono
+
+https://hicchicc.github.io/00ff/
+
+https://myrica.estable.jp/
+
