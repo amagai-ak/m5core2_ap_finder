@@ -74,6 +74,10 @@ void setup()
     setenv("TZ", time_zone, 1);
     tzset();
 
+    M5.Speaker.setVolume(64);
+    M5.Speaker.tone(2000, 50, 0, false);
+    delay(50);
+
     // システムステータス初期化
     memset(&sys_status.target_ap, 0, sizeof(sys_status.target_ap));
     sys_status.battery_level = M5.Power.getBatteryLevel();
@@ -113,7 +117,7 @@ void setup()
     sys_status.imu_gz_calib_count = 0;
     float gz_sum = 0.0f;
     // ジャイロZ軸のオフセット値をキャリブレーション
-    for( int i=0; i<100; i++ ){
+    for( int i=0; i<50; i++ ){
         update_imu_gz();
         gz_sum += sys_status.imu_gz;
         sys_status.imu_gz_calib_count++;

@@ -16,8 +16,8 @@ typedef struct {
     char ssid[32];
     int channel;
     int rssi;
+    int nfloor; // ノイズフロア: ESP32では実際には固定値が返されるのみ．
     uint32_t rssi_timestamp; // rssiが更新された時刻（millis()）
-
     uint32_t framecount_management;
     uint32_t framecount_control;
     uint32_t framecount_data;

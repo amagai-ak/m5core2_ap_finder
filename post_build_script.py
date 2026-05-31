@@ -34,4 +34,5 @@ def copy_bins(source, target, env):
         print("[POST-BUILD] No bin files copied")
 
 # ビルド成功後のみ実行
-env.AddPostAction("buildprog", copy_bins)
+action = env.AddPostAction("buildprog", copy_bins)
+env.AlwaysBuild(action)

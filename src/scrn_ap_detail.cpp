@@ -624,6 +624,7 @@ void wifi_sniffer_packet_handler(void* buff, wifi_promiscuous_pkt_type_t type)
         // TAがターゲットと一致する場合、sys_status.target_apのRSSIを更新
         if (memcmp(hdr->addr2, sys_status.target_ap.bssid, 6) == 0) {
             sys_status.target_ap.rssi = rssi;
+            sys_status.target_ap.nfloor = noise;
             sys_status.target_ap.rssi_timestamp = millis();
         }
     }
