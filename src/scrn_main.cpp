@@ -199,7 +199,8 @@ void ScreenMain::start_wifi_scan()
     clear_ap_list();
     
     // 非同期スキャンを開始
-    WiFi.scanNetworks(true, false, false, 300);
+//    WiFi.scanNetworks(true, false, false, 300);
+    WiFi.scanNetworks(true, true, true, 210);
     scan_in_progress = true;
     scan_start_time = millis();
 }
